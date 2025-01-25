@@ -1,19 +1,19 @@
-import Nav from "./content/Nav";
-import { Route, Routes } from "react-router";
-import Home from "./page/Home/Home";
-import About from "./page/About/About";
-import Contact from "./page/Contact/Contact";
-import Descs from "./page/Contact/description/Descs";
+import { Route, Routes } from "react-router-dom";
+import Nav from "./Content/Nav";
+import Home from "./Pages/Home/Home";
+import About from "./Pages/About/About";
+import Contact from "./Pages/Contact/Contact";
+import Desc from "./Pages/Contact/Description/Desc";
+
 function App() {
   return (
     <div>
       <Nav />
       <Routes>
-        <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/contact/:descs" element={<Descs />} />
+        <Route path="/contact/:desc" element={<Desc />} />
       </Routes>
     </div>
   );

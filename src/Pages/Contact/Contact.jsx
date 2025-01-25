@@ -3,7 +3,7 @@ import ContactMain from "./ContactMain";
 function Contact() {
   return (
     <div>
-      Contact ...
+      Contact...
       <ContactMain />
     </div>
   );
