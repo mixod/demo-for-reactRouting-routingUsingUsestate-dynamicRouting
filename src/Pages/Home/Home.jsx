@@ -21,7 +21,7 @@ function Home() {
         Load Products
       </button>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16  ">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16  p-2">
         {product.map((item) => (
           <div
             key={item.id}
@@ -34,9 +34,9 @@ function Home() {
                 className=" w-48 h-48 flex mb-2"
               />
             </div>
-            <h2 className="font-semibold">{item.title}</h2>
-            <p className="text-green-400">
-              $<spam className="text-black">{item.price}</spam>
+            <h2 className="font-semibold mb-2">{item.title}</h2>
+            <p className="text-green-400 mb-2">
+              $<spam className="text-black mb-2">{item.price}</spam>
             </p>
             <p>{item.description}</p>
           </div>
