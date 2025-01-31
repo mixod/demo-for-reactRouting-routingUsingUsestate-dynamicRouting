@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import Apple from "./route/Apple";
 import Banana from "./route/Banana";
 
