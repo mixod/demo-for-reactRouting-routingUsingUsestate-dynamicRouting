@@ -18,12 +18,12 @@ function Home() {
     <div>
       <button
         onClick={handleAllProduct}
-        className="bg-red-600 hover:bg-red-500 text-white px-6 py-2 rounded-md mb-8 "
+        className="bg-red-600 hover:bg-red-500 text-white px-6 py-2 rounded-md mb-8 flex justify-center items-center max-w-6xl mx-auto mt-40 "
       >
         Load Products
       </button>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16  p-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16  p-2 max-w-6xl mx-auto">
         {product.map((item) => (
           <div
             key={item.id}
@@ -40,7 +40,9 @@ function Home() {
             <p className="text-green-400 mb-2">
               $<spam className="text-black mb-2">{item.price}</spam>
             </p>
-            <NavLink to={"/home/" + item.id}>Readmore....</NavLink>
+            <NavLink to={"/home/" + item.id} className="hover:font-bold">
+              Readmore....
+            </NavLink>
           </div>
         ))}
       </div>
