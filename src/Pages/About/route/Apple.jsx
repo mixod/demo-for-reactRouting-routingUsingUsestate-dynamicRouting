@@ -12,6 +12,7 @@ function Apple() {
       console.log(error);
     }
   }
+
   return (
     <div>
       <button onClick={singleProduct}>Click</button>

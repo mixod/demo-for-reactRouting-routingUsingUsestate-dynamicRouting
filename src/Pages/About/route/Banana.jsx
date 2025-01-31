@@ -4,7 +4,7 @@ function Banana() {
   const [products, setProducts] = useState("");
   async function product() {
     try {
-      const response = await fetch("https://fakestoreapi.com/products/1");
+      const response = await fetch("https://fakestoreapi.com/products/2");
       const data = await response.json();
       console.log(data);
       setProducts(data);

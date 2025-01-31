@@ -4,6 +4,7 @@ import Home from "./Pages/Home/Home";
 import About from "./Pages/About/About";
 import Contact from "./Pages/Contact/Contact";
 import Desc from "./Pages/Contact/Description/Desc";
+import Description from "./Pages/Home/HomeRouter/Description";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Nav />
       <Routes>
         <Route path="/home" element={<Home />} />
+        <Route path="/home/:desc" element={<Description />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/contact/:desc" element={<Desc />} />

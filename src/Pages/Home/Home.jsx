@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 function Home() {
   const [product, setProduct] = useState([]);
@@ -39,7 +40,7 @@ function Home() {
             <p className="text-green-400 mb-2">
               $<spam className="text-black mb-2">{item.price}</spam>
             </p>
-            <p>{item.description}</p>
+            <NavLink to={"/home/" + item.id}>Readmore....</NavLink>
           </div>
         ))}
       </div>
