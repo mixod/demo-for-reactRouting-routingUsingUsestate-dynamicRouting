@@ -27,19 +27,25 @@ function Description() {
 
   return (
     <div>
-      <div className="max-w-6xl mx-auto ">
+      <div className="max-w-6xl mx-auto p-30 ">
         {state && (
-          <div className="flex flex-col justify-center items-center gap-5">
+          <div className="flex flex-col  gap-5 shadow-2xl p-10">
             <div>
-              <img src={state.image} className="flex h-50 w-50 "></img>
+              <img
+                src={state.image}
+                className=" h-60 w-60 shadow-lg hover:shadow-2xl p-10 "
+              ></img>
             </div>
             <div>
-              <h2 className="font-semibold mb-2">{state.title}</h2>
-              <p className="text-green-400 mb-2">
+              <h2 className="font-semibold mb-2  text-2xl">{state.title}</h2>
+              <p className="text-green-400 mb-2 ">
                 $<spam className="text-black mb-2">{state.price}</spam>
               </p>
-              <p>{state.description}</p>
+              <p className="flex flex-wrap  text-gray-500 text-xl">
+                {state.description}
+              </p>
             </div>
+            <div>{state.rate}</div>
           </div>
         )}
       </div>
