@@ -27,7 +27,22 @@ function Description() {
 
   return (
     <div>
-      <div>{state && <img src={state.image}></img>}</div>
+      <div className="max-w-6xl mx-auto ">
+        {state && (
+          <div className="flex flex-col justify-center items-center gap-5">
+            <div>
+              <img src={state.image} className="flex h-50 w-50 "></img>
+            </div>
+            <div>
+              <h2 className="font-semibold mb-2">{state.title}</h2>
+              <p className="text-green-400 mb-2">
+                $<spam className="text-black mb-2">{state.price}</spam>
+              </p>
+              <p>{state.description}</p>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
