@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
 function Home() {
@@ -13,6 +13,23 @@ function Home() {
       console.error(error);
     }
   }
+  const post = async () => {
+    try {
+      const res = await fetch("https://fakestoreapi.com/products", {
+        method: "POST",
+        body: JSON.stringify({
+          name: "jhdgjjd",
+        }),
+      });
+      console.log(res);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    post();
+  }, []);
 
   return (
     <div>
