@@ -2,10 +2,10 @@
 /* eslint-disable react/prop-types */
 import { createContext, useEffect, useState } from "react";
 
-export const newContext = createContext();
+export const NewContext = createContext();
 
 export function DataContext({ children }) {
-  const [state, setState] = useState();
+  const [state, setState] = useState([]);
 
   async function fetch() {
     try {
@@ -22,8 +22,8 @@ export function DataContext({ children }) {
     fetch();
   }, []);
   return (
-    <newContext.Provider value={{ state, setState }}>
+    <NewContext.Provider value={{ state, setState }}>
       {children}
-    </newContext.Provider>
+    </NewContext.Provider>
   );
 }

@@ -1,8 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { NewContext } from "../DataContext";
 
 function Home() {
   const [product, setProduct] = useState([]);
+
+  const { state } = useContext(NewContext);
   async function handleAllProduct() {
     try {
       const response = await fetch("https://fakestoreapi.com/products");
@@ -39,7 +42,20 @@ function Home() {
       >
         Load Products
       </button>
-      aknjsdjkasbd
+      <div>
+        {state.map((item) => (
+          <div key={item.id}>
+            <div>
+              <img
+                src={item.image}
+                alt={item.title}
+                className=" w-48 h-48 flex mb-2"
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16  p-2 max-w-6xl mx-auto">
         {product.map((item) => (
           <div
