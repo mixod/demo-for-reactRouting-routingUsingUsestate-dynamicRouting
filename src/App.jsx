@@ -7,6 +7,7 @@ import Description from "./Pages/Home/HomeRouter/Description";
 import MainLayout from "./Content/MainLayout";
 import AuthLayout from "./Content/AuthLayout";
 import AdminLayout from "./Content/AdminLayout";
+import { DataContext } from "./Pages/DataContext";
 
 function App() {
   return (
@@ -14,9 +15,23 @@ function App() {
       <Routes>
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
+          <Route
+            path="/home"
+            element={
+              <DataContext>
+                <Home />
+              </DataContext>
+            }
+          />
           <Route path="/home/:desc" element={<Description />} />
-          <Route path="/about" element={<About />} />
+          <Route
+            path="/about"
+            element={
+              <DataContext>
+                <About />
+              </DataContext>
+            }
+          />
           <Route path="/contact" element={<Contact />} />
           <Route path="/contact/:desc" element={<Desc />} />
         </Route>
