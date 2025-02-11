@@ -1,47 +1,48 @@
-import { useState, useEffect, useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+//  useState, useEffect,
+// import { NavLink } from "react-router-dom";
 import { NewContext } from "../DataContext";
 
 function Home() {
-  const [product, setProduct] = useState([]);
+  // const [product, setProduct] = useState([]);
 
   const { state } = useContext(NewContext);
-  async function handleAllProduct() {
-    try {
-      const response = await fetch("https://fakestoreapi.com/products");
-      const data = await response.json();
-      console.log(data);
-      setProduct(data);
-    } catch (error) {
-      console.error(error);
-    }
-  }
-  const post = async () => {
-    try {
-      const res = await fetch("https://fakestoreapi.com/products", {
-        method: "POST",
-        body: JSON.stringify({
-          name: "jhdgjjd",
-        }),
-      });
-      console.log(res);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // async function handleAllProduct() {
+  //   try {
+  //     const response = await fetch("https://fakestoreapi.com/products");
+  //     const data = await response.json();
+  //     console.log(data);
+  //     setProduct(data);
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // }
+  // const post = async () => {
+  //   try {
+  //     const res = await fetch("https://fakestoreapi.com/products", {
+  //       method: "POST",
+  //       body: JSON.stringify({
+  //         name: "jhdgjjd",
+  //       }),
+  //     });
+  //     console.log(res);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
-  useEffect(() => {
-    post();
-  }, []);
+  // useEffect(() => {
+  //   post();
+  // }, []);
 
   return (
     <div>
-      <button
+      {/* <button
         onClick={handleAllProduct}
         className="bg-red-600 hover:bg-red-500 text-white px-6 py-2 rounded-md mb-8 flex justify-center items-center max-w-6xl mx-auto mt-40 "
       >
         Load Products
-      </button>
+      </button> */}
       <div>
         {state.map((item) => (
           <div key={item.id}>
@@ -56,7 +57,7 @@ function Home() {
         ))}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16  p-2 max-w-6xl mx-auto">
+      {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16  p-2 max-w-6xl mx-auto">
         {product.map((item) => (
           <div
             key={item.id}
@@ -78,7 +79,7 @@ function Home() {
             </NavLink>
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }
