@@ -7,7 +7,7 @@ export const NewContext = createContext();
 export function DataContext({ children }) {
   const [state, setState] = useState([]);
 
-  async function fetch() {
+  async function fetchData() {
     try {
       const response = await fetch("https://fakestoreapi.com/products");
       const data = await response.json();
@@ -19,7 +19,7 @@ export function DataContext({ children }) {
   }
 
   useEffect(() => {
-    fetch();
+    fetchData();
   }, []);
   return (
     <NewContext.Provider value={{ state, setState }}>
