@@ -6,7 +6,7 @@ import { NewContext } from "../DataContext";
 function Home() {
   // const [product, setProduct] = useState([]);
 
-  const { state } = useContext(NewContext);
+  const { state, theme, toggleTheme } = useContext(NewContext);
   // async function handleAllProduct() {
   //   try {
   //     const response = await fetch("https://fakestoreapi.com/products");
@@ -36,7 +36,15 @@ function Home() {
   // }, []);
 
   return (
-    <div>
+    <div
+      style={{
+        color: theme.color,
+        background: theme.background,
+        height: "100%",
+        width: "100%",
+      }}
+    >
+      <button onClick={toggleTheme}>Theme Toggle</button>
       {/* <button
         onClick={handleAllProduct}
         className="bg-red-600 hover:bg-red-500 text-white px-6 py-2 rounded-md mb-8 flex justify-center items-center max-w-6xl mx-auto mt-40 "

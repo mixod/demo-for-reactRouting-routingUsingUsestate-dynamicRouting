@@ -1,28 +1,34 @@
-import { useContext, useState } from "react";
-import AboutMain from "./AboutMain";
-import AboutMini from "./AboutMini";
+import { useContext } from "react";
+
 import { NewContext } from "../DataContext";
 
 function About() {
-  const [content, setContent] = useState("Apple");
-  const { state } = useContext(NewContext);
+  const { state, theme, toggleTheme } = useContext(NewContext);
   console.log("StateAbout:", state);
   return (
-    <>
+    <div
+      style={{
+        color: theme.color,
+        background: theme.background,
+        height: "100%",
+        width: "100%",
+      }}
+    >
+      <button onClick={toggleTheme}>Theme Toggle</button>
+      {/* <AboutMain setContent={setContent}></AboutMain>
+      <AboutMini content={content} /> */}
       <div>
-        {state?.map((item) => (
-          <div key={item.id}>
-            <div>
-              <img src={item.image} alt={item.title} />
+        <div>
+          {state.map((item) => (
+            <div key={item.id}>
+              <div>
+                <img src={item.image} alt={item.title} />
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-      <>
-        {/* <AboutMain setContent={setContent}></AboutMain>
-        <AboutMini content={content} /> */}
-      </>
-    </>
+    </div>
   );
 }
 

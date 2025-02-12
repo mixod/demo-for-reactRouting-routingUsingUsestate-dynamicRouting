@@ -14,7 +14,14 @@ function App() {
     <div>
       <Routes>
         <Route element={<MainLayout />}>
-          <Route path="/" element={<Home />} />
+          <Route
+            path="/"
+            element={
+              <DataContext>
+                <Home />
+              </DataContext>
+            }
+          />
           <Route
             path="/home"
             element={
